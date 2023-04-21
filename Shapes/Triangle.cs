@@ -10,14 +10,14 @@ public class Triangle : Shape
     /// Checks that the given triangle sides are positive and that the given triangle exits.
     /// </summary>
     /// <param name="triangle">Triangle to check</param>
-    private static void existenceExceptionThrower(Triangle triangle)
+    private static void existenceExceptionThrower(double sideA, double sideB, double sideC)
     {
-        if (triangle.sideA <= 0 || triangle.sideB <= 0 || triangle.sideC <= 0)
+        if (sideA <= 0 || sideB <= 0 || sideC <= 0)
             throw new ShapeArgumentException("Sides must be positive");
 
-        if (!(triangle.sideA + triangle.sideB > triangle.sideC
-                   && triangle.sideA + triangle.sideC > triangle.sideB
-                   && triangle.sideB + triangle.sideC > triangle.sideA))
+        if (!(sideA + sideB > sideC
+            && sideA + sideC > sideB
+            && sideB + sideC > sideA))
             throw new ShapeArgumentException("Triangle with such sides doesn't exist");
     }
 
@@ -34,11 +34,11 @@ public class Triangle : Shape
     /// <param name="sideC"> Value of the third side.</param>
     public Triangle(double sideA, double sideB, double sideC)
     {
+        existenceExceptionThrower(sideA, sideB, sideC);
+
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideC;
-
-        existenceExceptionThrower(this);
     }
 
     /// <summary>
@@ -50,7 +50,7 @@ public class Triangle : Shape
         get { return sideA; }
         set
         {
-            existenceExceptionThrower(this);
+            existenceExceptionThrower(value, sideB, sideC);
             sideA = value;
         }
     }
@@ -64,7 +64,7 @@ public class Triangle : Shape
         get { return sideB; }
         set
         {
-            existenceExceptionThrower(this);
+            existenceExceptionThrower(sideA, value, sideC);
             sideB = value;
         }
     }
@@ -78,7 +78,7 @@ public class Triangle : Shape
         get { return sideC; }
         set
         {
-            existenceExceptionThrower(this);
+            existenceExceptionThrower(sideA, sideB, value);
             sideC = value;
         }
     }
