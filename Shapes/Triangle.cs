@@ -4,7 +4,7 @@ namespace Mindbox.Shapes.Models;
 /// Class that represents a triangle shape.
 /// This class is an implementation of <see cref="Shape"/> class.
 /// </summary>
-class Triangle : Shape
+public class Triangle : Shape
 {
     /// <summary>
     /// Checks that the given triangle sides are positive and that the given triangle exits.

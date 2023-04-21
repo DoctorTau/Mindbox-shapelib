@@ -4,7 +4,7 @@ namespace Mindbox.Shapes.Models;
 /// Class that represents a round shape.
 /// This class is an implementation of <see cref="Shape"/> class.
 /// </summary>
-class Round : Shape
+public class Round : Shape
 {
     // Radius of the round.
     private double radius;
