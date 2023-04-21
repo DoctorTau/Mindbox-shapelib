@@ -1,0 +1,61 @@
+# Ignore .NET Core / VS Code build and output files
+*.dll
+*.exe
+*.pdb
+
+# Ignore user-specific settings and files generated during development
+*.user
+*.vscode/
+*.vs/
+bin/
+obj/
+
+# Ignore debug and release builds
+Debug/
+Release/
+
+# Ignore log and text files
+*.log
+*.txt
+
+# Ignore cache files
+*.cache
+
+# Ignore Visual Studio user preference files
+*.suo
+*.userprefs
+
+# Ignore backup files
+*.bak
+*.bak.*
+
+# Ignore old files
+*.old
+
+# Ignore temporary files
+*.~*
+
+# Ignore database files
+*.dbmdl
+*.dbproj.schemaview
+*.mdf
+*.mld
+
+# Ignore documentation files
+*.ndoc
+
+# Ignore Open DBDiff files
+*.opensdf
+
+# Ignore Solution user options file
+*.sln.docstates
+
+# Ignore Visual Studio Project Metadata files
+*.vsp
+*.vspx
+
+# Ignore Visual Studio Source Control files
+*.vssscc
+
+# Ignore Visual Studio project template deployment files
+*.wldep
