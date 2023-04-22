@@ -5,7 +5,7 @@ using Xunit;
 public class TestTriangle
 {
     [Fact]
-    public void CreateTriangleWithPositiveSides()
+    public void Constructor_TriangleWithPositiveSides_CreatesTriangle()
     {
         // Arrange
         double sideA = 3;
@@ -22,7 +22,7 @@ public class TestTriangle
     }
 
     [Fact]
-    public void CreateTriangleWithNonPositiveSide()
+    public void Constructor_WithNonPositiveSide_ThrowsShapeArgumentException()
     {
         // Arrange
         double sideA = 3;
@@ -34,7 +34,7 @@ public class TestTriangle
     }
 
     [Fact]
-    public void CreateTriangleWithInvalidSides()
+    public void Constructor_WithInvalidSides_ThrowsShapeArgumentException()
     {
         // Arrange
         double sideA = 3;
@@ -46,7 +46,7 @@ public class TestTriangle
     }
 
     [Fact]
-    public void ChangeSideToNonPositive()
+    public void ChangeSide_ToNegativeSide_ThrowsShapeArgumentException()
     {
         // Arrange
         double sideA = 3;
@@ -60,7 +60,7 @@ public class TestTriangle
     }
 
     [Fact]
-    public void ChangeSideToCreateInvalidTriangle()
+    public void ChangeSide_ToNotValidTriangle_ThrowsShapeArgumentException()
     {
         // Arrange
         double sideA = 3;
@@ -74,7 +74,7 @@ public class TestTriangle
     }
 
     [Fact]
-    public void CalculateAreaOfTriangle()
+    public void GetArea_ValidParameters_ReturnsCorrectArea()
     {
         // Arrange
         double sideA = 3;
@@ -88,5 +88,39 @@ public class TestTriangle
 
         // Assert
         Assert.Equal(area, 6);
+    }
+
+    [Fact]
+    public void IsRightTriangle_True()
+    {
+        // Arrange
+        double sideA = 3;
+        double sideB = 4;
+        double sideC = 5;
+
+        Triangle triangle = new Triangle(sideA, sideB, sideC);
+
+        // Act
+        bool isRight = triangle.IsRightTriangle();
+
+        // Assert
+        Assert.True(isRight);
+    }
+
+    [Fact]
+    public void IsRightTriangle_False()
+    {
+        // Arrange
+        double sideA = 3;
+        double sideB = 4;
+        double sideC = 6;
+
+        Triangle triangle = new Triangle(sideA, sideB, sideC);
+
+        // Act
+        bool isRight = triangle.IsRightTriangle();
+
+        // Assert
+        Assert.False(isRight);
     }
 }

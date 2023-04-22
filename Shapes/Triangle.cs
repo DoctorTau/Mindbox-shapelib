@@ -92,4 +92,15 @@ public class Triangle : Shape
         double p = (sideA + sideB + sideC) / 2;
         return Math.Sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
     }
+
+    /// <summary>
+    /// Checks if the triangle is right.
+    /// </summary>
+    /// <returns> True if triangle is right, false otherwise.</returns>
+    public bool IsRightTriangle()
+    {
+        return sideA * sideA + sideB * sideB == sideC * sideC
+            || sideA * sideA + sideC * sideC == sideB * sideB
+            || sideB * sideB + sideC * sideC == sideA * sideA;
+    }
 }
